@@ -14,4 +14,17 @@ public class MainController {
         return "home";
     }
 
+
+
+    @GetMapping("/about")
+    public String about(Model model) {
+        model.addAttribute("title", "About us");
+        return "about";
+    }
+
+    @GetMapping("/contacts")
+    public String contacts(Model model) {
+        model.addAttribute("title", "Contacts");
+        return "contacts";
+    }
 }
