@@ -82,4 +82,11 @@ public class BlogController {
         postRepository.save(post);
         return "redirect:/blog";
     }
+
+    @PostMapping("/blog/{id}/remove")
+    public String blogPostDelete(@PathVariable(value = "id") long postId, Model model){
+        Post post = postRepository.findById(postId).orElseThrow(RuntimeException::new);
+        postRepository.delete(post);
+        return "redirect:/blog";
+    }
 }
