@@ -21,6 +21,15 @@ public class Post {
     @Column
     private int views;
 
+    public Post() {
+    }
+
+    public Post(String title, String anons, String fullText) {
+        this.title = title;
+        this.anons = anons;
+        this.fullText = fullText;
+    }
+
     public Long getId() {
         return id;
     }

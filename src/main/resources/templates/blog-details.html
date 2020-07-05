@@ -9,10 +9,12 @@
 <header th:insert="blocks/header :: header"></header>
 <div class="container mt-5">
     <h1 th:text="${title}"/>
-    <div th:each="element : ${posts}" class="alert alert-info mt-2">
-        <h3 th:text="${element.title}"/>
-        <p th:text="${element.anons}"/>
-        <a th:href="'/blog/' + ${element.id}" class="btn btn-warning">Details</a>
+    <div th:each="element : ${post}" class="alert alert-info mt-2">
+        <h1 th:text="${element.title}"/>
+        <p th:text="${element.fullText}"/>
+        <p th:text="${element.views}"/>
+        <a th:href="'/blog/' + ${element.id} + '/edit'" class="btn btn-warning">Edit</a>
+        <a th:href="'/blog/' + ${element.id} + '/remove'" class="btn btn-warning">Delete</a>
     </div>
 </div>
 <div th:insert="blocks/footer :: footer"></div>
